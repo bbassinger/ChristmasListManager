@@ -1,1 +1,21 @@
 <h1>Sign In Page</h1>
+<style>
+body {
+  background-color: #C3FDB8;
+}
+</style>
+<%= form_for :Welcome!, url: signins_path do |f| %>
+  <p>
+    <%= f.label :Username %><br>
+    <%= f.text_field :user %>
+    <br>
+    <%= f.label :Password %><br>
+    <%= f.text_field :pass %>
+  </p>
+ 
+
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
