@@ -1,0 +1,27 @@
+<h1>Sign Up Page</h1>
+<img src= "https://embed.widencdn.net/img/visitorlando/bvhn6yje1r/1920x747px/christmas-season.jpg?keep=c&crop=yes&q=70&u=ha4btd&use=3rso9" width="960" height="373">
+<!--<style>transparent.png" width="300" height="380">-->
+<style>
+body {
+  background-color: #118B1D;
+  
+}
+
+</style>
+<%= form_for :Account!, url: signups_path do |f| %>
+  <p>
+    <%= f.label :AddUsername %><br>
+    <%= f.text_field :adduser %>
+    <br>
+   
+    Create Password <input type="password" name="password" />
+    Re-enter Password <input type="password" name="password" />
+    
+  </p>
+ 
+
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
