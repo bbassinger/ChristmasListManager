@@ -11,5 +11,5 @@ Rails.application.routes.draw do
   get 'authorized', to: 'sessions#page_requires_login'
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-
+  root 'sessions#welcome'
 end
