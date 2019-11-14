@@ -1,21 +1,40 @@
-<h1>List Page!</h1>
-<style>
-body {
-  background-image: url("https://i.ibb.co/bzCSMYG/santatree.png");
-}
-</style>
-<%= form_for :article do |f| %>
-  <p>
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </p>
- 
-  <p>
-    <%= f.label :text %><br>
-    <%= f.text_area :text %>
-  </p>
- 
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+    <?php session_start() ?>  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<title>Your Christmas Lists!</title>
+</head>
+<body>
+<div class="container" style="padding:50px 250px;">
+<h1></h1>
+<table id="employee_grid" class="table table-condensed table-hover table-striped bootgrid-table" width="60%" cellspacing="0">
+   <thead>
+      <tr>
+         <th>Name</th>
+         <th>Product</th>
+         <th>Store</th>
+         <th>Price</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr data-row-id="1">
+         <td contenteditable="true">Kail</td>
+         <td contenteditable="true">Barbie Doll</td>
+         <td contenteditable="true">Target</td>
+         <td contenteditable="true">$19.99</td>
+      </tr>
+      <tr data-row-id="2">
+         <td contenteditable="true"></td>
+         <td contenteditable="true"></td>
+         <td contenteditable="true"></td>
+      </tr>
+      
+   </tbody>
+</table>
+
+</div>
+</body>
+</html>
+    

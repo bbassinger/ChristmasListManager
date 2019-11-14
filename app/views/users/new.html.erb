@@ -1,5 +1,14 @@
 <h1>Sign Up</h1>
+<style>
+body {
+  background-color: #C3FDB8;
+  
+}
+
+</style>
 <%= form_for @user do |f|%>
+ <%= f.label :email%><br>
+  <%= f.text_field :email%><br>
   <%= f.label :username%><br>
   <%= f.text_field :username%><br>
   <%= f.label :password%><br>
