@@ -23,5 +23,3 @@ feature "User creates an account" do
 		click_button "Create User"
 	end	
 end
-
-#feature "User "
