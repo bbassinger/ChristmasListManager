@@ -1,0 +1,16 @@
+<h1>Things on your list!</h1>
+ 
+<table>
+  <tr>
+    <th>Product</th>
+    <th>Store</th>
+  </tr>
+ 
+  <% @lists.each do |list| %>
+    <tr>
+      <td><%= list.product %></td>
+      <td><%= list.store %></td>
+      <td><%= link_to 'Show',list_path(list) %></td>
+    </tr>
+  <% end %>
+</table>
