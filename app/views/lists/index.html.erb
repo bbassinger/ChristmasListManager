@@ -1,18 +1,24 @@
 <h1>Things on your list!</h1>
  
 <table>
-  <tr>
-    <th>Product</th>
-    <th>Store</th>
+  <tr bgcolor="#FF0000">
+    <td>Product</td>
+    <td>Store</td>
   </tr>
  
   <% @lists.each do |list| %>
     <tr>
+      
       <td><%= list.product %></td>
       <td><%= list.store %></td>
       <td><%= link_to 'Show',list_path(list) %></td>
       <td><%= link_to 'Edit', edit_list_path(list) %></td>
       <td><%= link_to 'Destroy', list_path(list), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    </tr>
+   
+<style>
+table, th, td {
+  border: 1px solid black;
+}
+</style>
   <% end %>
 </table>
