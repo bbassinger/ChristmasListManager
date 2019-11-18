@@ -1,0 +1,46 @@
+
+<style>
+body  {
+  background-image: url("https://i.ibb.co/PTZBVxW/polarbear1.png");
+  background-size: 1800px 1000px;
+  
+}
+h1 {
+  font-size:60px;
+}
+</style>
+
+<h1>Editing Entry</h1>
+<%= form_for :list, url: list_path(@list), method: :patch do |f| %>
+ 
+  <% if @list.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@list.errors.count, "error") %> prohibited
+        this list from being saved:
+      </h2>
+      <ul>
+        <% @list.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+  <p>
+    <h3><%= f.label :Product %></h3>
+    <%= f.text_field :product %>
+  </p>
+ 
+  <p>
+    <h3><%= f.label :Store %></h3>
+    <%= f.text_area :store %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+ 
+<% end %>
+ 
+<%= link_to 'Back', lists_path %>

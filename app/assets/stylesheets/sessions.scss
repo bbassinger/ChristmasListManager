@@ -1,6 +1,23 @@
 // Place all the styles related to the sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+  background-position: center center;
+  background-color: #B0E0E6;
+  
+}
+img {
+  display: block;
+  margin-left:44%;
+  
+}
+
+
+
 .button {
   background-color: #4CAF50;
   border: none;
@@ -14,9 +31,9 @@
   cursor: pointer;
 }
 
-.button1 {border-radius: 12px; background-color:#FF0000; text-align: center;width: 20%;
-margin-left: 10%;
+.button1 {border-radius: 12px; background-color:#FF0000; text-align: center;width: 40%;font-size : 35px; min-width:40%;
+margin-left: 30%;
 margin-right: 20%}
-.button2 {border-radius: 12px;background-color: #2E8B57;text-align: center;width: 20%;
-margin-left: 10%;
+.button2 {border-radius: 12px;background-color: #2E8B57;text-align: center;width: 40%; font-size : 35px;
+margin-left: 30%;
 margin-right: 20%}

@@ -1,19 +1,41 @@
-<h1>WELCOME TO THE CHRISTMAS LIST MANAGER!!</h1>
-<img src="https://i.ibb.co/SV4dVtn/storyboard-welcome.png">
+<h1 align="center">WELCOME TO THE CHRISTMAS LIST MANAGER!</h1>
+<br>
+<br>
+<br>
 
+<br>
 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 <% if logged_in? %>
-    <h1>You are Logged In, <%= current_user.username %></h1>
+    <h2>You are logged in as, <%= current_user.username %>!</h2>
+     redirect = '/welcome'
+     redirect_to redirect
 <%end%>
 
 
+<style>
+body {
+  background-image: url('https://media1.tenor.com/images/2087784170b31b0b8baa9e77de2a6ef4/tenor.gif?itemid=4556241');
+  background-size: 1750px 1180px;
+}
+h1 {
+  color: white;
+  font-size: 5em;
+}
+h2 {
+  color:white;
+  font-size: 3em;
+}
 
+</style>
 
 <a href="/login" class="button button1">RETURNING USER</a>
 <br>
 <a href="/users/new" class="button button2">SIGN UP</a>
 
-<audio controls="controls" style="margin-left: auto; margin-right: auto;">
-  <source src="https://www.youtube.com/watch?v=qr_M3U-WR4o"></source>
-  Your browser does not support the audio element.
-</audio>
