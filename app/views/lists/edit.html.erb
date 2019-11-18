@@ -1,5 +1,16 @@
-<h1>Editing list</h1>
- 
+
+<style>
+body  {
+  background-image: url("https://i.ibb.co/PTZBVxW/polarbear1.png");
+  background-size: 1800px 1000px;
+  
+}
+h1 {
+  font-size:60px;
+}
+</style>
+
+<h1>Editing Entry</h1>
 <%= form_for :list, url: list_path(@list), method: :patch do |f| %>
  
   <% if @list.errors.any? %>
@@ -17,12 +28,12 @@
   <% end %>
  
   <p>
-    <%= f.label :Product %><br>
+    <h3><%= f.label :Product %></h3>
     <%= f.text_field :product %>
   </p>
  
   <p>
-    <%= f.label :Store %><br>
+    <h3><%= f.label :Store %></h3>
     <%= f.text_area :store %>
   </p>
  
