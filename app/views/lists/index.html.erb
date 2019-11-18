@@ -1,23 +1,50 @@
 <h1>Things on your list!</h1>
  
 <table>
-  <tr bgcolor="#FF0000">
+  
+  <tr bgcolor="#6dbbf5">
     <td>Product</td>
     <td>Store</td>
   </tr>
  
   <% @lists.each do |list| %>
+  
     <tr>
       
       <td><%= list.product %></td>
       <td><%= list.store %></td>
       <td><%= link_to 'Show',list_path(list) %></td>
       <td><%= link_to 'Edit', edit_list_path(list) %></td>
-      <td><%= link_to 'Destroy', list_path(list), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-   
+      <td class="delete"><%= link_to 'Delete', list_path(list), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+   </div>
 <style>
 table, th, td {
-  border: 1px solid black;
+  border: 3px solid black;
+ 
+  font-family: 'Rock Salt', cursive;
+  padding: 20px;
+  font-style: italic;
+  caption-side: bottom;
+  color: #666;
+  text-align: right;
+  letter-spacing: 1px;
+
+}
+
+
+.delete{
+  font: bold 11px Arial;
+  text-decoration: none;
+  background-color: #EEEEEE;
+  color: #333333;
+  padding: 2px 6px 2px 6px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
+  border-radius: 12px; background-color:#FF0000; text-align: center;width: 10%;font-size : 15px; min-width:40%;
+margin-left: 30%;
+margin-right: 20%
 }
 </style>
   <% end %>
