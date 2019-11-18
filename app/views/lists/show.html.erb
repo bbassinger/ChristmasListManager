@@ -14,12 +14,11 @@ body  {
 
 </body>
 <p>
-    <h3>Product:</h3>
-    <h3><%=@list.product%></h3>
+    <h3>Product: <%=@list.product%></h3>
+    
 </p>
 
 <p>
-    <strong>Store:</strong>
-    <%=@list.store %>
+    <h3>Store: <%=@list.store%></h3>
 </p>
-<%= link_to 'Your List', lists_path %>
+<%= link_to 'Back to Your Christmas List', lists_path %>
