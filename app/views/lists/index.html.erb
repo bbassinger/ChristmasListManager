@@ -5,7 +5,7 @@
   <tr bgcolor="#6dbbf5">
     <th style="text-align: center">Product</th>
     <th style="text-align: center">Store</th>
-    <th style="text-align: center" colspan="3">Options</th>
+    <th style="text-align: center" colspan="4">Options</th>
   </tr>
  
   <% @lists.each do |list| %>
@@ -16,11 +16,18 @@
       <td><%= list.store %></td>
       <td><%= link_to 'Show',list_path(list) %></td>
       <td><%= link_to 'Edit', edit_list_path(list) %></td>
-      <td><%= link_to 'Add', '/lists/new'%></td>
+      
       <td class="delete"><%= link_to 'Delete', list_path(list), method: :delete, data: { confirm: 'Are you sure?' } %></td>
    </div>
+   
+   
 <style>
+body{
+  background-color:white;
+}
+
 table, td {
+  
   border: 3px solid black;
  
   font-family: 'Rock Salt', cursive;
@@ -63,8 +70,35 @@ table {
   border-left: 1px solid #CCCCCC;
   border-radius: 12px; background-color:#FF0000; text-align: center;width: 10%;font-size : 15px; min-width:40%;
 margin-left: 30%;
+
+
 margin-right: 20%
 }
+.add{
+  font: bold 11px Arial;
+  text-decoration: none;
+  background-color: #EEEEEE;
+  color: #333333;
+  padding: 2px 6px 2px 6px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
+  border-radius: 12px; background-color:#FF0000; text-align: center;width: 10%;font-size : 15px; min-width:40%;
+margin-left: 30%;
+}
+
 </style>
   <% end %>
+  
 </table>
+<h1 style="text-align:center">This elf asks...</h1>
+<div class="circular-sb">
+   
+  Would you like to add to your list?
+  <%= link_to 'Add', '/lists/new'%>
+  <div class="circle1"></div>
+  <div class="circle2"></div>
+</div>
+<img src = "https://i.ibb.co/x7LTCCv/elf.jpg">
+<class="add"><%= link_to 'Add', '/lists/new'%>
