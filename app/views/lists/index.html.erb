@@ -1,10 +1,11 @@
-<h1>Things on your list!</h1>
+<h1 style="text-align:center">Things on your list!</h1>
  
 <table>
   
   <tr bgcolor="#6dbbf5">
-    <td>Product</td>
-    <td>Store</td>
+    <th style="text-align: center">Product</th>
+    <th style="text-align: center">Store</th>
+    <th style="text-align: center" colspan="3">Options</th>
   </tr>
  
   <% @lists.each do |list| %>
@@ -18,7 +19,7 @@
       <td class="delete"><%= link_to 'Delete', list_path(list), method: :delete, data: { confirm: 'Are you sure?' } %></td>
    </div>
 <style>
-table, th, td {
+table, td {
   border: 3px solid black;
  
   font-family: 'Rock Salt', cursive;
@@ -30,8 +31,25 @@ table, th, td {
   letter-spacing: 1px;
 
 }
+th {
+  border: 3px solid black;
+ 
+  font-family: 'Arial';
+  padding: 20px;
+   font-style: normal;
+  caption-side: bottom;
+  color: black;
+  text-align: right;
+  letter-spacing: 1px;
 
-
+}
+.options{
+  width: 30%;
+  
+}
+table {
+    margin: 0 auto;
+}
 .delete{
   font: bold 11px Arial;
   text-decoration: none;
