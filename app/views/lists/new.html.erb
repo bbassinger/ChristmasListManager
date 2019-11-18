@@ -1,4 +1,4 @@
-<h1>Your Christmas Lists!</h1>
+<h1>Add to your Christmas List!</h1>
 <%= link_to 'My List', controller: 'lists' %>
 <%= form_for :list, url: lists_path do |f| %>
   <p>
@@ -12,7 +12,19 @@
   </p>
  
   <p>
+ 
+   <label for="price">Price</label>
+
+<select id="price" name="price">
+	<option value="Under $5.00">Under $5.00</option>
+	<option value="$5.00-$20.00">$5.00-$20.00</option>
+	<option value="Above $20.00">Above $20.00</option>
+</select>
+  </p>
+  <p>
     <%= f.submit %>
   </p>
 <% end %>
 <%= link_to 'Back', lists_path %>
+
+

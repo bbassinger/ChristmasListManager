@@ -33,6 +33,6 @@ class ListsController < ApplicationController
 end
 private
     def list_params
-        params.require(:list).permit(:user_id,:product,:store)
+        params.require(:list).permit(:user_id,:product,:store,:price)
     end
 
