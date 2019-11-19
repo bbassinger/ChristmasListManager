@@ -5,8 +5,8 @@
 </div>
 <style>
 body {
-  background-color: #5ADE50;
   background-image: url('https://i.imgur.com/zB5qMg7.jpg');
+  background-color: #5ADE50;
 }
 
 </style>
@@ -26,12 +26,12 @@ body {
    <%= f.text_field :firstname, :placeholder => "First Name"%>
    <%= f.text_field :lastname, :placeholder => "Last Name"%><br>
  
-  <%= f.label :email%><br>
+   <br><%= f.label :email%><br>
    <%= f.text_field :email, :placeholder => "name@example.com"%><br>
-   <%= f.label :username%><br>
+   <br><%= f.label :username%><br>
    <%= f.text_field :username, :placeholder => "Enter a username"%><br>
    
-   <%= f.label :password%><br>
+   <br><%= f.label :password%><br>
    <%= f.password_field :password, :placeholder => "Enter password"%>
    <%= f.password_field :password_confirmation, :placeholder => "Confirm password"%></div></div></div>
    
@@ -39,5 +39,5 @@ body {
   <div class="ml-5" style="width: 200px;">
   <%= f.submit :class =>'btn btn-primary'%>
   </div>
-   </h5>
+   <h5>
  <%end%>
