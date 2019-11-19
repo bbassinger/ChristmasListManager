@@ -9,7 +9,7 @@ def create
    if @user.save
       session[:user_id] = @user.id
       flash[:success] = "User created."
-      redirect = root_url
+      redirect = '/lists/new'
       
    else
       flash[:danger] = "Passwords are not the same!"
