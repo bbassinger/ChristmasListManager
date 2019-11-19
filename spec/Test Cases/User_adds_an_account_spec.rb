@@ -39,14 +39,12 @@ feature "User logs out successfuly" do
 end
 
 
-feature "User adds a product to the christmas list" do
-	scenario "User successfully adds to the christmas list" do
-		visit welcome_path
-		expect(page).to have_content("RETURNING USER")
-		fill_in "username", with: "bbassin"
-		fill_in "password", with: "12345"
-		click_button "Login"
-		expect(page).to have_content("You are Logged In, bbassin")
-		
-	end
-end
+#feature "User adds a product to the christmas list" do	scenario "User successfully adds to the christmas list" do
+#		visit welcome_path
+#		expect(page).to have_content("RETURNING USER")
+#		fill_in "username", with: "bbassin"
+#		fill_in "password", with: "12345"
+#		click_button "Login"
+##		
+#	end
+#end
