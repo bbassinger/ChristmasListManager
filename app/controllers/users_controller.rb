@@ -4,18 +4,23 @@ def new
    @user = User.new
 end
 def create
-   if(:password != :password_confirmation)
-      redirect = '/users/new'
-      flash[:success] = "Passwords are not the same!"
-   else
-      @user = User.create(params.require(:user).permit(:username,        
-   :password,:password_confirmation))
+   @user = User.new(user_params)
+   #if (params[:password] != params[:password_confirmation])
+   if @user.save
       session[:user_id] = @user.id
-      redirect = '/welcome'
+      flash[:success] = "User created."
+      redirect = '/lists/new'
+      
+   else
+      flash[:danger] = "Passwords are not the same!"
+      redirect = '/users/new'
    end
-   redirect_to redirect
+      redirect_to redirect
 end
-def user_params
-    params.require(:user).permit(:username, :password, :password_confirmation)
-end
+
+private
+
+   def user_params
+      params.require(:user).permit(:firstname, :lastname, :email, :username, :password, :password_confirmation)
+   end
 end
