@@ -11,10 +11,6 @@ Rails.application.routes.draw do
   get 'authorized', to: 'sessions#page_requires_login'
   
   get 'logout', to: 'sessions#destroy', as: 'logout'
-<<<<<<< HEAD
-=======
-
->>>>>>> 455f1ca0bb26b5aee1940435ed7b0a712cc1b855
   
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root 'sessions#welcome'

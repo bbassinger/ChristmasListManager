@@ -10,7 +10,6 @@ def create
       session[:user_id] = @user.id
       flash[:success] = "User created."
       redirect = '/lists/new'
-      
    else
       flash[:danger] = "Passwords are not the same!"
       redirect = '/users/new'
