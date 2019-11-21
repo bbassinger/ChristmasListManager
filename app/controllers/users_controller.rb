@@ -5,10 +5,10 @@ def new
 end
 def create
    @user = User.new(user_params)
-   #if (params[:password] != params[:password_confirmation])
+   
    if @user.save
       session[:user_id] = @user.id
-      flash[:success] = "User created."
+      #flash[:success] = "User created."
       redirect = '/lists/new'
    else
       flash[:danger] = "Passwords are not the same!"
