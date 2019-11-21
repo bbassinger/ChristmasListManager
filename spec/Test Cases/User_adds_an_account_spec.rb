@@ -70,7 +70,44 @@ feature "User successfully logs out after mavigating to the list/show page" do
 	end
 end
 
+feature "User successfully adds a product and store to the list" do	
+	scenario "User is able to add a product and store to thier list and view the item in the list" do
+		
+	end
+end
 
+feature "User successfully deletes an item from their list" do
+	scenario "User is able to add an item to their list and them delete the item" do 
+		
+	end
+end
+
+feature "User cam use show to look at an item in the list" do
+	scenario "User is able to navigate to their list and use the show link to look at one of their items" do
+		
+	end
+end
+
+feature "User successfully edits an item in their list" do
+	scenario "User is able to edit an item in their list" do
+		
+	end
+end
+
+feature "User recieves an error on sign up page" do
+	scenario "User will recieve an error message if the passwords do not match on the sign up page" do
+		
+	end
+end
+
+feature "User reciees an error on log in page" do
+	scenario "User will recieve an error message if their username/password is not found" do
+		
+	end
+end
+
+	
+	
 
 
 
