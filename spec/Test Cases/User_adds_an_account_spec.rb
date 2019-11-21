@@ -24,7 +24,7 @@ feature "User creates an account" do
 	end	
 end
 
-feature "User logs out successfuly" do
+feature "User logs out successfuly from the list/add page" do
 	scenario "User is able to log out after signing in" do
 		visit welcome_path
 	    expect(page).to have_content("RETURNING USER")
@@ -52,3 +52,26 @@ feature "User navigates to their list" do
 		expect(page).to have_content("Your Christmas list!")
 	end
 end
+
+feature "User successfully logs out after mavigating to the list/show page" do 
+	scenario "user is able to log out after signing in and visiting their list" do 
+		visit welcome_path
+		expect(page).to have_content("RETURNING USER")
+        click_link "RETURNING USER"
+		fill_in "username", with: "bbassin"
+		fill_in "password", with: "12345"
+		click_button "Login"
+		expect(page).to have_content("Add to your Christmas List!")
+		click_link "My List"
+		expect(page).to have_content("Your Christmas list!")
+		click_link "Log Out"
+		expect(page).to have_content("RETURNING USER")
+		expect(page).to have_content("SIGN UP")
+	end
+end
+
+
+
+
+
+	
