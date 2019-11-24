@@ -10,8 +10,12 @@ class ListsController < ApplicationController
     
     def create
         @list = List.new(list_params)
-        @list.save
+        @list.user = current_user
+    if @list.save
         redirect_to @list
+    else
+        render 'new'
+    end
     end
     def edit
         @list = List.find(params[:id]) 
