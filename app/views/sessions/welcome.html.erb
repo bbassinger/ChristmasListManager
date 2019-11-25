@@ -1,14 +1,5 @@
 <h1 align="center">WELCOME TO THE CHRISTMAS LIST MANAGER!</h1>
-<%= link_to 'My list test',controller: 'lists' %>
-<p>
-    <% if current_user %>
-    Logged in as <%= current_user.username %>.
-    <%= link_to "Log out test", logout_path %>
-    <% else %>
-    <%= link_to "Sign Up test", signup_path %> or
-    <%= link_to "Log in test", login_path %>
-    <% end %>
-</p>
+
 <br>
 <br>
 <br>
@@ -24,6 +15,8 @@
 <br>
 <% if logged_in? %>
     <h2>You are logged in as, <%= current_user.username %>!</h2>
+    <%= link_to 'My list test',controller: 'lists' %>
+
      redirect = '/welcome'
      redirect_to redirect
 <%end%>
@@ -45,9 +38,7 @@ h2 {
 
 </style>
 
-<a href="/login" class="button button1">RETURNING USER</a>
-<br>
-<a href="/users/new" class="button button2">SIGN UP</a>
+
 <body>
     <audio controls>
   <source src="christmasSong.ogg" type="audio/ogg">
@@ -55,3 +46,15 @@ h2 {
   Your browser does not support the audio tag.
 </audio>
 </body>
+
+
+<p>
+    <% if current_user %>
+    Logged in as <%= current_user.username %>.
+    <%= link_to "Log out test", logout_path %>
+    <% else %>
+    
+    <%= link_to "RETURNING USER", login_path,class:"button button1" %> or
+    <%= link_to "SIGN UP", signup_path,class:"button button2" %> 
+    <% end %>
+</p>

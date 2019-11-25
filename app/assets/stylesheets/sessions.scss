@@ -37,3 +37,17 @@ margin-right: 20%}
 .button2 {border-radius: 12px;background-color: #2E8B57;text-align: center;width: 40%; font-size : 35px;
 margin-left: 30%;
 margin-right: 20%}
+
+.btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.btn:hover {
+  opacity: 1;
+}
