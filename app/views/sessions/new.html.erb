@@ -59,9 +59,10 @@ body {
 }
 </style>
 </head>
-
+<body>
 <p id= "alert"><%=alert %></p>
-<h1>Login test</h1>
+<h1><font color="white">Login</font></h1>
+<div class="container">
 <%= form_tag sessions_path do |form| %>
 <div class="field">
   <%= label_tag :username %>
@@ -72,25 +73,11 @@ body {
   <%= password_field_tag :password %>
 </div>
 <div class="actions">
-  <%= submit_tag "Login Test", class:'btn' %>
+  <%= submit_tag "Login!", class:'btn' %>
 </div>
 <% end %>
-<body>
+</div>
 
-
-
-  <form action="lists/new" class="container">
-    
-    <h1>Login</h1>
-
-    <label for="username"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="username" required>
-
-    <label for="password"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="password" required>
-
-    <button type="submit" class="btn">Login</button>
-  </form>
 
 
 
