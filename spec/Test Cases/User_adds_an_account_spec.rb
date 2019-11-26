@@ -17,6 +17,8 @@ feature "User creates an account" do
 		visit welcome_path
 		expect(page).to have_content("SIGN UP")
 		click_link "SIGN UP"
+		fill_in "First Name", with: "Brooke"
+		fill_in "Last Name", with: "Bassinger"
 		fill_in "Email", with: "bbassin2@uncc.edu"
 		fill_in "Username", with: "bbassin"
 		fill_in "Password", with: "1234567"
@@ -35,6 +37,7 @@ feature "User logs out successfuly from the list/add page" do
 	    expect(page).to have_content("Add to your Christmas List!")
 	    click_link "Log Out"
 	    expect(page).to have_content("RETURNING USER")
+	    expect(page).to have_content("SIGN UP")
 	end
 end
 
@@ -96,7 +99,17 @@ end
 
 feature "User recieves an error on sign up page" do
 	scenario "User will recieve an error message if the passwords do not match on the sign up page" do
-		
+		visit welcome_path
+		expect(page).to have_content("SIGN UP")
+		click_link "SIGN UP"
+		fill_in "First Name", with: "Brooke"
+		fill_in "Last Name", with: "Bassinger"
+		fill_in "Email", with: "bbassin2@uncc.edu"
+		fill_in "Username", with: "bbassin"
+		fill_in "Password", with: "1234567"
+		fill_in "Password confirmation", with: "123456"
+		click_button "Create User"
+		expect(page).to have_content("Passwords are not the same!")
 	end
 end
 
