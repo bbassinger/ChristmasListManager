@@ -2,7 +2,7 @@
 <%= link_to 'My List', controller: 'lists' %>
 <%= form_for :list, url: lists_path do |f| %>
   <p>
-    <%= f.label :Product %><br>
+    <%= f.label :Product, "Product" %><br>
     <%= f.text_field :product %>
   </p>
  

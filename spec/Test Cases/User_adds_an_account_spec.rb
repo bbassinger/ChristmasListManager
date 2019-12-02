@@ -56,7 +56,7 @@ feature "User navigates to their list" do
 	end
 end
 
-feature "User successfully logs out after mavigating to the list/show page" do 
+feature "User successfully logs out after navigating to the list/show page" do 
 	scenario "user is able to log out after signing in and visiting their list" do 
 		visit welcome_path
 		expect(page).to have_content("RETURNING USER")
@@ -75,27 +75,21 @@ end
 
 feature "User successfully adds a product and store to the list" do	
 	scenario "User is able to add a product and store to thier list and view the item in the list" do
-		
+		visit welcome_path
+		expect(page).to have_content("RETURNING USER")
+        click_link "RETURNING USER"
+		fill_in "username", with: "bbassin"
+		fill_in "password", with: "12345"
+		click_button "Login"
+		expect(page).to have_content("Add to your Christmas List!")
+		#fill_in "Product", with: "gift card"
+		#fill_in "Store", with: "bass pro"
+		click_button "Save List"
+		expect(page).to have_content("Your Christmas list!")
+		#expect(page).to have_content("gift card")
 	end
 end
 
-feature "User successfully deletes an item from their list" do
-	scenario "User is able to add an item to their list and them delete the item" do 
-		
-	end
-end
-
-feature "User cam use show to look at an item in the list" do
-	scenario "User is able to navigate to their list and use the show link to look at one of their items" do
-		
-	end
-end
-
-feature "User successfully edits an item in their list" do
-	scenario "User is able to edit an item in their list" do
-		
-	end
-end
 
 feature "User recieves an error on sign up page" do
 	scenario "User will recieve an error message if the passwords do not match on the sign up page" do
@@ -114,11 +108,7 @@ feature "User recieves an error on sign up page" do
 	end
 end
 
-feature "User reciees an error on log in page" do
-	scenario "User will recieve an error message if their username/password is not found" do
-		
-	end
-end
+
 
 	
 	
