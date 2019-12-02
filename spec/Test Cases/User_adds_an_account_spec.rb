@@ -102,6 +102,7 @@ feature "User recieves an error on sign up page" do
 		visit welcome_path
 		expect(page).to have_content("SIGN UP")
 		click_link "SIGN UP"
+		expect(page).to have_content("Sign Up To Save Your Christmas Lists!")
 		fill_in "First Name", with: "Brooke"
 		fill_in "Last Name", with: "Bassinger"
 		fill_in "Email", with: "bbassin2@uncc.edu"
@@ -109,7 +110,7 @@ feature "User recieves an error on sign up page" do
 		fill_in "Password", with: "1234567"
 		fill_in "Password confirmation", with: "123456"
 		click_button "Create User"
-		expect(page).to have_content("Passwords are not the same!")
+		expect(page).to have_content("Sign Up To Save Your Christmas Lists!")
 	end
 end
 
