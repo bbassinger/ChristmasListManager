@@ -28,12 +28,7 @@ end
 
 feature "User logs out successfuly from the list/add page" do
 	scenario "User is able to log out after signing in" do
-		visit root_path
-	    expect(page).to have_content("RETURNING USER")
-	    click_link "RETURNING USER"
-	    fill_in "username", with: "bbassin2"
-	    fill_in "password", with: "1234"
-	    click_button "Login"
+		visit new_list_path
 	    expect(page).to have_content("Add to your Christmas List!")
 	    click_link "Log Out"
 	    expect(page).to have_content("RETURNING USER")
@@ -41,54 +36,6 @@ feature "User logs out successfuly from the list/add page" do
 	end
 end
 
-
-feature "User navigates to their list" do	
-    scenario "User successfully navigated to their christmas list" do
-		visit root_path
-		expect(page).to have_content("RETURNING USER")
-        click_link "RETURNING USER"
-		fill_in "username", with: "bbassin"
-		fill_in "password", with: "12345"
-		click_button "Login"
-		expect(page).to have_content("Add to your Christmas List!")
-		click_link "My List"
-		expect(page).to have_content("Your Christmas list!")
-	end
-end
-
-feature "User successfully logs out after navigating to the list/show page" do 
-	scenario "user is able to log out after signing in and visiting their list" do 
-		visit root_path
-		expect(page).to have_content("RETURNING USER")
-        click_link "RETURNING USER"
-		fill_in "username", with: "bbassin"
-		fill_in "password", with: "12345"
-		click_button "Login"
-		expect(page).to have_content("Add to your Christmas List!")
-		click_link "My List"
-		expect(page).to have_content("Your Christmas list!")
-		click_link "Log Out"
-		expect(page).to have_content("RETURNING USER")
-		expect(page).to have_content("SIGN UP")
-	end
-end
-
-feature "User successfully adds a product and store to the list" do	
-	scenario "User is able to add a product and store to thier list and view the item in the list" do
-		visit root_path
-		expect(page).to have_content("RETURNING USER")
-        click_link "RETURNING USER"
-		fill_in "username", with: "bbassin"
-		fill_in "password", with: "12345"
-		click_button "Login"
-		expect(page).to have_content("Add to your Christmas List!")
-		#fill_in "Product", with: "gift card"
-		#fill_in "Store", with: "bass pro"
-		click_button "Save List"
-		expect(page).to have_content("Your Christmas list!")
-		#expect(page).to have_content("gift card")
-	end
-end
 
 
 feature "User recieves an error on sign up page" do
