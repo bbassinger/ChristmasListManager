@@ -34,6 +34,19 @@ h2 {
   color:white;
   font-size: 3em;
 }
+.search{
+    font: bold 11px Arial;
+  text-decoration: none;
+  background-color: #20B2AA;
+  color: #333333;
+  padding: 2px 6px 2px 6px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
+  border-radius: 12px; background-color:#20B2AA; text-align: center;width: 30%;font-size : 20px; min-width:50%;
+
+}
 
 </style>
 
@@ -41,8 +54,7 @@ h2 {
 
 <p>
     <% if current_user %>
-    Logged in as <%= current_user.username %>.
-    <%= link_to "Log out test", logout_path %>
+    <%= link_to "Log out", logout_path, class:'search' %>
     <% else %>
     
     <%= link_to "RETURNING USER", login_path,class:"button button1" %>
