@@ -1,9 +1,9 @@
 <h1 style="text-align:center">Your Christmas list!</h1>
  
-<h4>SEARCHING BY USER</h4>
+<h4 class="search">SEARCH A FRIEND'S LIST BY USERNAME</h4>
 <%= form_tag(lists_path, method: :get)do %>
 <%= text_field_tag(:search, params[:search])%>
-<%= submit_tag ("search test")%>
+<%= submit_tag ("Search Username")%>
 <%end%>
 
 <% @lists.each do |list| %>
@@ -12,14 +12,56 @@
   
 </ul>
 <% end %>
-
 <table>
   
+  <tr bgcolor="#6dbbf5">
+    <th style="text-align: center">User</th>
+    <th style="text-align: center">Product</th>
+    <th style="text-align: center">Store</th>
+    <th style="text-align: center" colspan="4">Options</th>
+  </tr>
+<% current_user.lists.each do |list| %>
+<p>
+  <tr>
+  <strong>List:</strong>
+  <td><%= current_user.username %></td>
+  <td><%= list.product %></td>
+  <td><%= list.store %></td>
+  
+      <td><%= link_to 'Show',list_path(list) %></td>
+      <td><%= link_to 'Edit', edit_list_path(list) %></td>
+      
+      <td class="delete"><%= link_to 'Delete', list_path(list), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+  
+</p>
+<%end%>
+</table>
+<h1 style="text-align:center">This elf asks...</h1>
+<div class="circular-sb">
+   
+  Would you like to add to your list?
+  <%= link_to 'Add', '/lists/new'%>
+  or log out?
+  <%= link_to 'Log Out', logout_path %>
+  <div class="circle1"></div>
+  <div class="circle2"></div>
+</div>
+<img src = "https://i.ibb.co/x7LTCCv/elf.jpg">
+
+<table>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <h2>     Your friend's list: </h2>
   <tr bgcolor="#6dbbf5">
     <th style="text-align: center">Product</th>
     <th style="text-align: center">Store</th>
     <th style="text-align: center">User</th>
-    <th style="text-align: center" colspan="4">Options</th>
+    <th style="text-align: center" colspan="1">Options</th>
   </tr>
  
   <% @lists.each do |list| %>
@@ -29,16 +71,13 @@
       <td><%= list.product %></td>
       <td><%= list.store %></td>
       <td><% if list.user %>
-      <%= list.user.id %>
+      <%= list.user.username %>
       <%end%>
       </td>
       
       
       
       <td><%= link_to 'Show',list_path(list) %></td>
-      <td><%= link_to 'Edit', edit_list_path(list) %></td>
-      
-      <td class="delete"><%= link_to 'Delete', list_path(list), method: :delete, data: { confirm: 'Are you sure?' } %></td>
    </div>
 <%end%>
 
@@ -102,6 +141,19 @@ margin-left: 30%;
 
 margin-right: 20%
 }
+.search{
+    font: bold 11px Arial;
+  text-decoration: none;
+  background-color: #20B2AA;
+  color: #333333;
+  padding: 2px 6px 2px 6px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
+  border-radius: 12px; background-color:#20B2AA; text-align: center;width: 7%;font-size : 20px; min-width:30%;
+
+}
 .add{
   font: bold 11px Arial;
   text-decoration: none;
@@ -120,24 +172,4 @@ margin-left: 30%;
 
   
 </table>
-<h1 style="text-align:center">This elf asks...</h1>
-<div class="circular-sb">
-   
-  Would you like to add to your list?
-  <%= link_to 'Add', '/lists/new'%>
-  or log out?
-  <%= link_to 'Log Out', logout_path %>
-  <div class="circle1"></div>
-  <div class="circle2"></div>
-</div>
-<img src = "https://i.ibb.co/x7LTCCv/elf.jpg">
 
-<% current_user.lists.each do |list| %>
-<p>
-  <strong>List:</strong>
-  <%= current_user.username %>
-  <%= list.user.username %>
-  <%= list.product %>
-  <%= list.store %>
-</p>
-<%end%>
