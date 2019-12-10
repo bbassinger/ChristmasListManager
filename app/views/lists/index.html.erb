@@ -18,6 +18,7 @@
     <th style="text-align: center">User</th>
     <th style="text-align: center">Product</th>
     <th style="text-align: center">Store</th>
+    <th style="text-align: center">Price</th>
     <th style="text-align: center" colspan="4">Options</th>
   </tr>
 <% current_user.lists.each do |list| %>
@@ -26,6 +27,21 @@
   <td><%= current_user.username %></td>
   <td><%= list.product %></td>
   <td><%= list.store %></td>
+  <% if list.price == 'Under $5.00'%>
+      <td class="search"><%=list.price%>
+      
+      <%end%>
+      </td>
+  <% if list.price == 'Above $20.00'%>
+      <td class="search2"><%=list.price%>
+      
+      <%end%>
+      </td>
+  <% if list.price == '$5.00-$20.00'%>
+      <td class="search3"><%=list.price%>
+      
+      <%end%>
+      </td>
   
       <td><%= link_to 'Show',list_path(list) %></td>
       <td><%= link_to 'Edit', edit_list_path(list) %></td>
@@ -60,7 +76,8 @@
     <th style="text-align: center">Product</th>
     <th style="text-align: center">Store</th>
     <th style="text-align: center">User</th>
-    <th style="text-align: center" colspan="1">Options</th>
+    <th style="text-align: center">Price</th>
+    <th style="text-align: center" colspan="0">Options</th>
   </tr>
  
   <% @lists.each do |list| %>
@@ -71,12 +88,19 @@
       <td><%= list.store %></td>
       <td><% if list.user %>
       <%= list.user.username %>
+      
+      <%end%>
+      </td>
+      <% if list.price == 'Under $5.00'%>
+      <td class="search"><%=list.price%>
+      
       <%end%>
       </td>
       
       
-      
       <td><%= link_to 'Show',list_path(list) %></td>
+      
+      
    </div>
 <%end%>
 

@@ -10,16 +10,10 @@
     <%= f.label :Store %><br>
     <%= f.text_area :store %>
   </p>
- 
+  
   <p>
- 
-   <label for="price">Price</label>
-
-<select id="price" name="price">
-	<option value="Under $5.00">Under $5.00</option>
-	<option value="$5.00-$20.00">$5.00-$20.00</option>
-	<option value="Above $20.00">Above $20.00</option>
-</select>
+    <%= f.label :Price %><br>
+   <%= f.select(:price, [['Under $5.00'], ['$5.00-$20.00'],['Above $20.00']])%>
   </p>
   <p>
     <%= f.submit %>

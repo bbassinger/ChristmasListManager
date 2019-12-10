@@ -1,0 +1,6 @@
+<%- unless current_user.favorite_projects.exists?(id: @project.id) -%>
+<%= link_to 'Add to favorites', favorite_projects_path(project_id: @project), method: :post %>
+
+<%- else -%>
+<%= link_to 'Remove from favorites', favorite_project_path(@project), method: :delete %>
+<%- end -%>
