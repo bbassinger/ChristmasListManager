@@ -1,6 +1,12 @@
 <h1>Add to your Christmas List!</h1>
 <%= link_to 'My List', controller: 'lists' %>
 <%= form_for :list, url: lists_path do |f| %>
+
+<p>
+    <%= f.label :Anonymous? %><br>
+   <%= f.select(:anonymous, [['yes'], ['no']])%>
+  </p>
+  
   <p>
     <%= f.label :Product %><br>
     <%= f.text_field :product %>

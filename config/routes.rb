@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
   get '/favorites', to: 'favorite_projects#index', as: 'favorites'
+  get "favorite_project/index" => "favorite_projects#index"
+  get "favorite_projects", to: "sessions#favorites", as: 'favorite_projects' 
   resources :users
   resources :favorite_projects, only: [:create, :destroy]
   

@@ -1,8 +1,7 @@
 class FavoriteProjectsController < ApplicationController
-    before_action :set_project
-    
+   
     def index
-@favorites = current_user.favorite_projects
+@favorite = current_user.username.favorite_projects
     end
   
   def create
@@ -13,14 +12,24 @@ class FavoriteProjectsController < ApplicationController
     end
   end
   
+  def update  
+ @favorite_project = Favorite_project.find(params[:id])
+
+ if @favorite_project.update(favorite_project_params)  
+ redirect_to(@favorite_project)  
+ else  
+ render :edit  
+ end  
+  end  
+  
   def destroy
     Favorite.where(favorited_id: @project.id, user_id: current_user.id).first.destroy
     redirect_to @project, notice: 'Project is no longer in favorites'
   end
   
+
   private
-  
-  def set_project
-    @project = Project.find(params[:project_id] || params[:id])
-  end
+    def favorite_project_params
+        params.require(:favorite_project).permit(:user_id,:favorited_type,:favorited_id)
+    end
 end

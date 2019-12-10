@@ -1,3 +1,5 @@
+
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
 <h1 style="text-align:center">Your Christmas list!</h1>
  
 <h4 class="search">SEARCH A FRIEND'S LIST BY USERNAME</h4>
@@ -45,8 +47,7 @@
   
       <td><%= link_to 'Show',list_path(list) %></td>
       <td><%= link_to 'Edit', edit_list_path(list) %></td>
-      
-      <td class="delete"><%= link_to 'Delete', list_path(list), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td class="delete"><%= link_to 'Delete', list_path(list), method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
   
 </p>
@@ -76,6 +77,7 @@
     <th style="text-align: center">Product</th>
     <th style="text-align: center">Store</th>
     <th style="text-align: center">User</th>
+    <th style="text-align: center">Favorite?</th>
     <th style="text-align: center">Price</th>
     <th style="text-align: center" colspan="0">Options</th>
   </tr>
@@ -86,18 +88,35 @@
       
       <td><%= list.product %></td>
       <td><%= list.store %></td>
-      <td><% if list.user %>
+      <td><% if list.user%>
       <%= list.user.username %>
       
       <%end%>
       </td>
+         <td style="width:30px"><%= link_to '', favorite_projects_path, class:"far fa-heart"%> </td>
+     
       <% if list.price == 'Under $5.00'%>
       <td class="search"><%=list.price%>
       
       <%end%>
       </td>
       
+      <% if list.price == 'Above $20.00'%>
+      <td class="search2"><%=list.price%>
       
+      <%end%>
+      </td>
+  <% if list.price == '$5.00-$20.00'%>
+      <td class="search3"><%=list.price%>
+      
+      <%end%>
+      </td>
+      
+       <% if list.price == ''%>
+      <td class="search3">Not specified.
+      
+      <%end%>
+      </td>
       <td><%= link_to 'Show',list_path(list) %></td>
       
       
@@ -190,6 +209,7 @@ margin-right: 20%
   border-radius: 12px; background-color:#FF0000; text-align: center;width: 10%;font-size : 15px; min-width:40%;
 margin-left: 30%;
 }
+
 
 </style>
 
