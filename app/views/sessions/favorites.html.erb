@@ -1,4 +1,13 @@
 <h1>YOUR FAVORITES LIST</h1>
 
 
-  
+<%= current_user.username %>
+<%= current_user.favorites %>
+<table>
+<% current_user.favorites.each do |favorite| %>
+<p>
+  <tr>favorite
+  <td><%= current_user.username %></td>
+</p>
+<%end%>
+  </table>

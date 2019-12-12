@@ -5,12 +5,10 @@ body  {
   background-size: 1800px 1000px;
   
 }
-h1 {
-  font-size:60px;
-}
+
 </style>
 
-<h1>Editing Entry</h1>
+<h1 class="fontH1">Editing Entry</h1>
 <%= form_for :list, url: list_path(@list), method: :patch do |f| %>
  
   <% if @list.errors.any? %>
@@ -36,7 +34,11 @@ h1 {
     <h3><%= f.label :Store %></h3>
     <%= f.text_area :store %>
   </p>
- 
+ <p>
+    <%= f.label :Price %><br>
+   <%= f.select(:price, [['Under $5.00'], ['$5.00-$20.00'],['Above $20.00']])%>
+  </p>
+  <p>
   <p>
     <%= f.submit %>
   </p>

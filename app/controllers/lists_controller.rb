@@ -35,6 +35,23 @@ class ListsController < ApplicationController
         
         redirect_to lists_path 
     end 
+    
+    def favorite_project
+        @list = List.find(params[:id]) 
+    type = params[:favorited_type]
+    if type == "favorite"
+      current_user.favorite_projects << @list
+      redirect_to controller: 'lists'
+
+    elsif type == "unfavorite"
+      current_user.favorite_projects.delete(@list)
+      redirect_to controller: 'lists'
+     
+    else
+      # Type missing, nothing happens
+      redirect_to controller: 'lists'
+    end
+  end
 end
 private
     def list_params

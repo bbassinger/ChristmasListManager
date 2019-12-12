@@ -1,74 +1,93 @@
 // Place all the styles related to the Lists controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
 body {
-    background: #EEEEEE;
-  }
 
-.heart {
-  position: absolute;
-  margin: auto;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: #F9B3B3;
-  height: 175px;
-  width: 175px;
-  transform: rotate(-45deg);
-  animation-name: color;
-  animation-duration: 6s;
-  animation-iteration-count: infinite;
+  
+
+  
+
+  background-color: white;
+
+  
+
 }
+table, td {
+  
+  border: 3px solid black;
+ 
+  font-family: 'Rock Salt', cursive;
+  padding: 20px;
+  font-style: italic;
+  caption-side: bottom;
+  color: #666;
+  text-align: right;
+  letter-spacing: 1px;
 
-@keyframes color {
-  0% {
-    background-color: #FCD9D9;
-  }
-  50% {
-    background-color: #F9B3B3;
-  }
-  100% {
-    background-color: #FCD9D9;
-  }
 }
+th {
+  border: 3px solid black;
+ 
+  font-family: 'Arial';
+  padding: 20px;
+   font-style: normal;
+  caption-side: bottom;
+  color: black;
+  text-align: right;
+  letter-spacing: 1px;
 
-.heart::after {
-  background-color: #F9B3B3;
-  content: "";
-  border-radius: 50%;
-  position: absolute;
-  width: 175px;
-  height: 175px;
-  top: 0px;
-  left: 87.5px;
-  animation-name: color;
-  animation-duration: 6s;
-  animation-iteration-count: infinite;
 }
-
-.heart::before {
-  content: "";
-  background-color: #F9B3B3;
-  border-radius: 50%;
-  position: absolute;
-  width: 175px;
-  height: 175px;
-  top: -87.5px;
-  left: 0px;
-  animation-name: color;
-  animation-duration: 6s;
-  animation-iteration-count: infinite;
+.options{
+  width: 30%;
+  
 }
-
-.heart:hover {
-  transform: scale(0.9);
+table {
+    margin: 0 auto;
 }
+.delete{
+  font: bold 11px Arial;
+  text-decoration: none;
+  background-color: #EEEEEE;
+  color: #333333;
+  padding: 2px 6px 2px 6px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
+  border-radius: 12px; background-color:#FF0000; text-align: center;width: 10%;font-size : 15px; min-width:40%;
+margin-left: 30%;
 
-img {
-  width: 45%;
-  vertical-align: middle;
+
+margin-right: 20%
+}
+.search{
+    font: bold 11px Arial;
+  text-decoration: none;
+  background-color: #20B2AA;
+  color: #333333;
+  padding: 2px 6px 2px 6px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
+  border-radius: 12px; background-color:#20B2AA; text-align: center;width: 7%;font-size : 20px; min-width:30%;
+
+}
+.add{
+  font: bold 11px Arial;
+  text-decoration: none;
+  background-color: #EEEEEE;
+  color: #333333;
+  padding: 2px 6px 2px 6px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
+  border-radius: 12px; background-color:#FF0000; text-align: center;width: 10%;font-size : 15px; min-width:40%;
+margin-left: 30%;
+}
+.fontH1 {
+  font-size:60px;
 }
 
  footer#footer {

@@ -15,9 +15,44 @@ img {
   margin-left:44%;
   
 }
+.container {
+  position: absolute;
+  right: 50;
+  margin: 20px;
+  max-width: 1000px;
+  padding: 16px;
+  background-color: white;
+}
 
 
+.btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
 
+.btn:hover {
+  opacity: 1;
+}
+
+.welcomeH1 {
+
+  color: white;
+
+  font-size: 5em;
+
+}
+.welcomeH2 {
+
+  color: white;
+
+  font-size: 5em;
+
+}
 .button {
   background-color: #4CAF50;
   border: none;
@@ -38,15 +73,6 @@ margin-right: 20%}
 margin-left: 30%;
 margin-right: 20%}
 
-.btn {
-  background-color: #4CAF50;
-  color: white;
-  padding: 16px 20px;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  opacity: 0.9;
-}
 
 .btn:hover {
   opacity: 1;
@@ -56,4 +82,23 @@ body .container{
   
     width:450px;
     height:280px;
+}
+
+
+h2 {
+  color:white;
+  font-size: 3em;
+}
+.search{
+    font: bold 11px Arial;
+  text-decoration: none;
+  background-color: #20B2AA;
+  color: #333333;
+  padding: 2px 6px 2px 6px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
+  border-radius: 12px; background-color:#20B2AA; text-align: center;width: 30%;font-size : 20px; min-width:50%;
+
 }

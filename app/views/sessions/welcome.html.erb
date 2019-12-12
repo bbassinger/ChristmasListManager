@@ -1,4 +1,4 @@
-<h1 align="center">WELCOME TO THE CHRISTMAS LIST MANAGER!</h1>
+<h1 class="welcomeH1" align="center">WELCOME TO THE CHRISTMAS LIST MANAGER!</h1>
 
 <br>
 <br>
@@ -15,7 +15,7 @@
 <br>
 <p>
 <% if logged_in? %>
-    <h2>You are logged in as, <%= current_user.username %>!</h2>
+    <h2 class="welcomeH2">You are logged in as, <%= current_user.username %>!</h2>
     <%= link_to 'My Christmas List',controller: 'lists'%>
 <%end%>
 </p>
@@ -26,27 +26,7 @@ body {
   background-image: url('https://media1.tenor.com/images/2087784170b31b0b8baa9e77de2a6ef4/tenor.gif?itemid=4556241');
   background-size: 1750px 1180px;
 }
-h1 {
-  color: white;
-  font-size: 5em;
-}
-h2 {
-  color:white;
-  font-size: 3em;
-}
-.search{
-    font: bold 11px Arial;
-  text-decoration: none;
-  background-color: #20B2AA;
-  color: #333333;
-  padding: 2px 6px 2px 6px;
-  border-top: 1px solid #CCCCCC;
-  border-right: 1px solid #333333;
-  border-bottom: 1px solid #333333;
-  border-left: 1px solid #CCCCCC;
-  border-radius: 12px; background-color:#20B2AA; text-align: center;width: 30%;font-size : 20px; min-width:50%;
 
-}
 
 </style>
 

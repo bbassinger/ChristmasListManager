@@ -63,7 +63,8 @@
   <div class="circle1"></div>
   <div class="circle2"></div>
 </div>
-<img src = "https://i.ibb.co/x7LTCCv/elf.jpg">
+<img src = "https://i.ibb.co/x7LTCCv/elf.jpg" style="width: 40vw; min-width: 3px;" >
+
 
 <table>
   <br>
@@ -77,8 +78,8 @@
     <th style="text-align: center">Product</th>
     <th style="text-align: center">Store</th>
     <th style="text-align: center">User</th>
-    <th style="text-align: center">Favorite?</th>
     <th style="text-align: center">Price</th>
+    <th style="text-align: center">Favorite?</th>
     <th style="text-align: center" colspan="0">Options</th>
   </tr>
  
@@ -93,8 +94,7 @@
       
       <%end%>
       </td>
-         <td style="width:30px"><%= link_to '', favorite_projects_path, class:"far fa-heart"%> </td>
-     
+
       <% if list.price == 'Under $5.00'%>
       <td class="search"><%=list.price%>
       
@@ -112,17 +112,23 @@
       <%end%>
       </td>
       
-       <% if list.price == ''%>
-      <td class="search3">Not specified.
+       <% if list.price == nil%>
+      <td class="search3">Not specified by user
       
       <%end%>
       </td>
+      <td>     
+         <%= link_to '', favorite_project_list_path(list, type: "favorite"), method: :put, class:"far fa-heart"%>
+      
+           </td>
+           
+   <!--<%= link_to "unfavorite", favorite_project_path(list, type: "unfavorite"), method: :put %>-->
+
       <td><%= link_to 'Show',list_path(list) %></td>
       
       
    </div>
 <%end%>
-
 
 
    
@@ -135,80 +141,7 @@ img {
 margin: 10 500 0 1000px;
 }
 
-table, td {
-  
-  border: 3px solid black;
- 
-  font-family: 'Rock Salt', cursive;
-  padding: 20px;
-  font-style: italic;
-  caption-side: bottom;
-  color: #666;
-  text-align: right;
-  letter-spacing: 1px;
 
-}
-th {
-  border: 3px solid black;
- 
-  font-family: 'Arial';
-  padding: 20px;
-   font-style: normal;
-  caption-side: bottom;
-  color: black;
-  text-align: right;
-  letter-spacing: 1px;
-
-}
-.options{
-  width: 30%;
-  
-}
-table {
-    margin: 0 auto;
-}
-.delete{
-  font: bold 11px Arial;
-  text-decoration: none;
-  background-color: #EEEEEE;
-  color: #333333;
-  padding: 2px 6px 2px 6px;
-  border-top: 1px solid #CCCCCC;
-  border-right: 1px solid #333333;
-  border-bottom: 1px solid #333333;
-  border-left: 1px solid #CCCCCC;
-  border-radius: 12px; background-color:#FF0000; text-align: center;width: 10%;font-size : 15px; min-width:40%;
-margin-left: 30%;
-
-
-margin-right: 20%
-}
-.search{
-    font: bold 11px Arial;
-  text-decoration: none;
-  background-color: #20B2AA;
-  color: #333333;
-  padding: 2px 6px 2px 6px;
-  border-top: 1px solid #CCCCCC;
-  border-right: 1px solid #333333;
-  border-bottom: 1px solid #333333;
-  border-left: 1px solid #CCCCCC;
-  border-radius: 12px; background-color:#20B2AA; text-align: center;width: 7%;font-size : 20px; min-width:30%;
-
-}
-.add{
-  font: bold 11px Arial;
-  text-decoration: none;
-  background-color: #EEEEEE;
-  color: #333333;
-  padding: 2px 6px 2px 6px;
-  border-top: 1px solid #CCCCCC;
-  border-right: 1px solid #333333;
-  border-bottom: 1px solid #333333;
-  border-left: 1px solid #CCCCCC;
-  border-radius: 12px; background-color:#FF0000; text-align: center;width: 10%;font-size : 15px; min-width:40%;
-margin-left: 30%;
-}
 
 
 </style>
